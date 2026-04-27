@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+env/
+*.sqlite3
+
+# Django/static
+staticfiles/
+media/
+
+# Env files
+.env
+backend/.env
+frontend/.env
+
+# Node
+frontend/node_modules/
+npm-debug.log*
+
+# Build
+frontend/dist/
+
+# OS/IDE
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ML/cache
+*.h5
+*.keras
+*.pkl
+*.joblib
+.huggingface/
