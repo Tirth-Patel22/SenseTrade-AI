@@ -3,25 +3,24 @@ __pycache__/
 *.pyc
 .venv/
 env/
-*.sqlite3
 
-# Django/static
+# Django
 staticfiles/
 media/
+*.sqlite3
 
-# Env files
+# Env
 .env
 backend/.env
 frontend/.env
+frontend/.env.local
+frontend/.env.production.local
 
 # Node
 frontend/node_modules/
-npm-debug.log*
-
-# Build
 frontend/dist/
 
-# OS/IDE
+# IDE/OS
 .vscode/
 .idea/
 .DS_Store
