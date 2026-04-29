@@ -66,10 +66,6 @@ def predict_ticker(request, ticker: str):
     try:
         from apps.ai.services import predict_signal_for_ticker
         payload = predict_signal_for_ticker(symbol)
-    except Ticker.DoesNotExist:
-        return Response({"detail": "Ticker not found."}, status=status.HTTP_404_NOT_FOUND)
-    except ValueError as exc:
-        return Response({"detail": str(exc)}, status=status.HTTP_400_BAD_REQUEST)
     except Exception as exc:
         return Response({"detail": f"Prediction failed: {str(exc)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
