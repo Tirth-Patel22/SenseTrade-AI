@@ -70,6 +70,9 @@ def predict_ticker(request, ticker: str):
         return Response({"detail": "Ticker not found."}, status=status.HTTP_404_NOT_FOUND)
     except ValueError as exc:
         return Response({"detail": str(exc)}, status=status.HTTP_400_BAD_REQUEST)
+    except Exception as exc:
+        return Response({"detail": f"Prediction failed: {str(exc)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
 
     ticker_obj = Ticker.objects.get(symbol=symbol)
     PredictionLog.objects.create(

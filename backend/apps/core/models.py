@@ -36,7 +36,7 @@ class NewsHeadline(models.Model):
     source = models.CharField(max_length=64)
     title = models.CharField(max_length=512)
     description = models.TextField(blank=True)
-    url = models.URLField()
+    url = models.URLField(max_length=1000)
     published_at = models.DateTimeField(db_index=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
